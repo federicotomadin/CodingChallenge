@@ -52,11 +52,11 @@ namespace CodingChallenge.Data.Classes
 
         //public Formas Tipo { get; set; }
 
-        public FormaGeometrica(Formas tipo, decimal ancho)
-        {
-            Tipo = tipo;
-            _lado = ancho;
-        }
+        //public FormaGeometrica(Formas tipo, decimal ancho)
+        //{
+        //    Tipo = tipo;
+        //    _lado = ancho;
+        //}
 
         public static string Imprimir(List<FormasGeometricas> formas, Idiomas idioma)
         {
@@ -64,7 +64,7 @@ namespace CodingChallenge.Data.Classes
 
             if (!formas.Any())
             {
-                sb = FuncionesGenerales.AsignarIdioma(idioma);
+                sb = FuncionesGenerales.AsignarIdiomaVacio(idioma);
             }
             else
             {

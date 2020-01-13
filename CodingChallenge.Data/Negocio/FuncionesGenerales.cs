@@ -9,7 +9,7 @@ namespace CodingChallenge.Data.Negocio
 {
     public class FuncionesGenerales
     {
-        public static StringBuilder AsignarIdioma(Idiomas idioma)
+        public static StringBuilder AsignarIdiomaVacio(Idiomas idioma)
         {
             var sb = new StringBuilder();
 
@@ -27,18 +27,36 @@ namespace CodingChallenge.Data.Negocio
             return sb;
         }
 
+        public static StringBuilder AsignarIdioma(Idiomas idioma)
+        {
+            var sb = new StringBuilder();
 
-        public static string TraducirForma(Formas tipo, int cantidad, Idiomas idioma)
+            switch (idioma)
+            {
+                case Idiomas.Castellano:
+                    sb.Append("<h1>Reporte de Formas</h1>");
+                    break;
+                case Idiomas.Ingles:
+                    sb.Append("<h1>Shapes report</h1>");
+                    break;
+                default: break;
+            }
+
+            return sb;
+        }
+
+
+        public static string TraducirForma(EnumFormas tipo, int cantidad, Idiomas idioma)
         {
             switch (tipo)
             {
-                case Formas.Cuadrado:
+                case EnumFormas.Cuadrado:
                     if (idioma == Idiomas.Castellano) return cantidad == 1 ? "Cuadrado" : "Cuadrados";
                     else return cantidad == 1 ? "Square" : "Squares";
-                case Formas.Circulo:
+                case EnumFormas.Circulo:
                     if (idioma == Idiomas.Castellano) return cantidad == 1 ? "Círculo" : "Círculos";
                     else return cantidad == 1 ? "Circle" : "Circles";
-                case Formas.TrianguloEquilatero:
+                case EnumFormas.TrianguloEquilatero:
                     if (idioma == Idiomas.Castellano) return cantidad == 1 ? "Triángulo" : "Triángulos";
                     else return cantidad == 1 ? "Triangle" : "Triangles";
             }

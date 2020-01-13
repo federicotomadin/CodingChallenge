@@ -9,17 +9,14 @@ namespace CodingChallenge.Data.Tests
     public class DataTests
     {
         [TestCase]
-        public void TestResumenListaVacia()
-        {
-            Assert.AreEqual("<h1>Lista vacía de formas!</h1>",
-                FormaGeometrica.Imprimir(new List<FormasGeometricas>(), 1));
-        }
+        public void TestResumenListaVacia() => Assert.AreEqual("<h1>Lista vacía de formas!</h1>",
+                FormaGeometrica.Imprimir(new List<FormasGeometricas>(), Idiomas.Castellano));
 
         [TestCase]
         public void TestResumenListaVaciaFormasEnIngles()
         {
             Assert.AreEqual("<h1>Empty list of shapes!</h1>",
-                FormaGeometrica.Imprimir(new List<FormasGeometricas>(), 2));
+                FormaGeometrica.Imprimir(new List<FormasGeometricas>(), Idiomas.Ingles));
         }
 
         [TestCase]
@@ -71,7 +68,7 @@ namespace CodingChallenge.Data.Tests
         [TestCase]
         public void TestResumenListaConMasTiposEnCastellano()
         {
-            var formas = new List<FormaGeometrica>
+            var formas = new List<FormasGeometricas>
             {
                 new FormasGeometricas(EnumFormas.Cuadrado, 5),
                 new FormasGeometricas(EnumFormas.Circulo, 3),
